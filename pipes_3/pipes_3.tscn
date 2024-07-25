@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkcttknbhvbkd"]
+
+[ext_resource type="Script" path="res://pipes_3/pipes_3.gd" id="1_4qjd4"]
+[ext_resource type="Texture2D" uid="uid://bpwxto2udycqi" path="res://assets/sprites/double twigs.png" id="1_efjjo"]
+[ext_resource type="PackedScene" uid="uid://vkvewuo17ts1" path="res://flower/flower.tscn" id="3_h0qf1"]
+
+[node name="pipes_3" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_4qjd4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, -386)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -55)
+scale = Vector2(0.15, 0.2)
+texture = ExtResource("1_efjjo")
+
+[node name="LeftCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, -70)
+polygon = PackedVector2Array(-359, -77, -317, -86, -303, -108, -290, -104, -290, -92, -219, -110, -167, -154, -160, -176, -142, -191, -136, -170, -159, -140, -73, -163, -54, -180, -46, -177, -56, -160, -24, -166, -24, -159, 79, -150, 79, -135, 32, -145, 34, -132, 17, -132, -13, -142, -81, -144, -68, -130, -80, -122, -114, -129, -179, -106, -196, -91, -233, -79, -226, -63, -202, -54, -195, -30, -217, -36, -247, -66, -299, -47, -317, -44, -360, -30)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-11, -64)
+polygon = PackedVector2Array(-42, 44, -38, 66, 43, 74, 47, 85, 65, 86, 70, 78, 113, 78, 102, 94, 103, 111, 128, 104, 127, 78, 244, 76, 228, 99, 243, 100, 266, 82, 370, 84, 370, 48, 316, 45, 310, 16, 285, -3, 282, 21, 299, 49, 208, 51, 191, 30, 175, 37, 181, 55, 109, 54, 85, 42, 73, 52, -12, 43, -24, 26, -33, 26, -28, 47)
+
+[node name="flower" parent="." instance=ExtResource("3_h0qf1")]
+visible = false
+position = Vector2(184, -301)

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bj1xyyoju5bho"]
+
+[ext_resource type="FontFile" uid="uid://dmplx3q6t1wca" path="res://fonts/quick_cat/Quick Cat.ttf" id="1_iaq8w"]
+
+[resource]
+font = ExtResource("1_iaq8w")
+font_size = 64
+font_color = Color(0, 0.643137, 0.713726, 1)
+outline_size = 10
+outline_color = Color(0.721569, 0.286275, 0.415686, 1)

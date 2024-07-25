@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpr04xmhy1va0"]
+
+[ext_resource type="Script" path="res://pipes_5/pipes_5.gd" id="1_q10wd"]
+[ext_resource type="Texture2D" uid="uid://cui48flswcdoy" path="res://assets/sprites/dubbele_roos_scaled.png" id="2_uyk0i"]
+[ext_resource type="PackedScene" uid="uid://vkvewuo17ts1" path="res://flower/flower.tscn" id="3_0kwif"]
+
+[node name="pipes_6" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_q10wd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-432.629, -17)
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-21.855, -20, 658.145, -40, 1108.14, -55, 1463.14, -35, 1483.14, 110, 1293.14, 95, 628.145, 115, -16.855, 145)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(34.3712, -7)
+polygon = PackedVector2Array(119.629, -9, 121.629, 19, 386.629, 21, 489.629, 40, 488, 16, 400.629, -9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-436.629, -130)
+texture = ExtResource("2_uyk0i")
+centered = false
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5, -142)
+
+[node name="flower" parent="." instance=ExtResource("3_0kwif")]
+visible = false
+position = Vector2(1, -65)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(42.3712, 5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-3, -12)
+polygon = PackedVector2Array(133.629, 4, 157.629, 4, 197, -37, 230.629, -5, 273.629, -2, 297, -34, 316.629, 3, 377.629, 2, 420, -41, 437, 0, 482, 10, 483, 40, 483, 67, 472, 79, 457.629, 32, 402.629, 22, 377, 39, 372.629, 18, 308.629, 18, 279, 50, 260, 20, 234, 21, 220, 34, 207.629, 16, 174.629, 17, 148, 45, 138.629, 11, 133.629, 11)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-475, -22)
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-11.4285, -102.857, 74.2859, -40, 285.714, -45.7143, 302.857, -137.143, 382.857, -40, 657.143, -28.5714, 742.857, -194.286, 963.144, -40, 1113.14, -40, 1234.29, -194.286, 1288.14, 20, 1373.14, 25, 1363.14, 45, 1333.14, 45, 1193.14, 240, 1103.14, 60, 918.144, 70, 771.429, 205.714, 663.144, 80, 463.144, 90, 303.144, 285, 171.429, 131.429, -28.5713, 142.857)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

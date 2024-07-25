@@ -1,0 +1,93 @@
+{
+	"textures": [
+		{
+			"image": "FLY spritesheet concept.png",
+			"size": {
+				"w": 1553,
+				"h": 1430
+			},
+			"sprites": [
+				{
+					"filename": "FLY_flap_L1.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 778,
+						"h": 474
+					},
+					"margin": {
+						"x": 147,
+						"y": 293,
+						"w": 302,
+						"h": 606
+					}
+				},
+				{
+					"filename": "FLY_flap_L2.png",
+					"region": {
+						"x": 778,
+						"y": 0,
+						"w": 775,
+						"h": 474
+					},
+					"margin": {
+						"x": 150,
+						"y": 293,
+						"w": 305,
+						"h": 606
+					}
+				},
+				{
+					"filename": "FLY_flap_R1.png",
+					"region": {
+						"x": 0,
+						"y": 474,
+						"w": 791,
+						"h": 478
+					},
+					"margin": {
+						"x": 147,
+						"y": 289,
+						"w": 289,
+						"h": 602
+					}
+				},
+				{
+					"filename": "FLY_flap_R2.png",
+					"region": {
+						"x": 791,
+						"y": 474,
+						"w": 758,
+						"h": 478
+					},
+					"margin": {
+						"x": 147,
+						"y": 289,
+						"w": 322,
+						"h": 602
+					}
+				},
+				{
+					"filename": "FLY_idle_1.png",
+					"region": {
+						"x": 0,
+						"y": 952,
+						"w": 778,
+						"h": 478
+					},
+					"margin": {
+						"x": 147,
+						"y": 289,
+						"w": 302,
+						"h": 602
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:2001c4b4c7871ee2434a85d9d76e973b:a39188f9f81962569acdb0fd32be32e5:78b8be360a3e1b1d4447472388acf555$"
+	}
+}

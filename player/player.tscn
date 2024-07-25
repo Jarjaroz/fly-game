@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbujavjfviy6o"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_2burc"]
+[ext_resource type="Texture2D" uid="uid://ihs22lon03a8" path="res://assets/sprites/FLYsheet_scaled.png" id="2_eakno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6q67"]
+atlas = ExtResource("2_eakno")
+region = Rect2(1296, 0, 324, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8vm4"]
+atlas = ExtResource("2_eakno")
+region = Rect2(0, 0, 324, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcdas"]
+atlas = ExtResource("2_eakno")
+region = Rect2(324, 0, 324, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc1qm"]
+atlas = ExtResource("2_eakno")
+region = Rect2(648, 0, 324, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knthe"]
+atlas = ExtResource("2_eakno")
+region = Rect2(972, 0, 324, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eg223"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6q67")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8vm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcdas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8vm4")
+}],
+"loop": false,
+"name": &"flap_L",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc1qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knthe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc1qm")
+}],
+"loop": false,
+"name": &"flap_R",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63ptv"]
+radius = 61.2046
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 7
+script = ExtResource("1_2burc")
+
+[node name="SpriteAnimated" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eg223")
+animation = &"flap_R"
+frame = 2
+frame_progress = 1.0
+offset = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_63ptv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.499999, -8.10623e-06)
+scale = Vector2(6.45, 6.5)
+
+[node name="TimeAfterDeath" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="TimeAfterDeath" to="." method="_on_time_after_death_timeout"]

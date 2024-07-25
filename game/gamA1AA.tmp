@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c70abl4j0kur5"]
+
+[ext_resource type="PackedScene" uid="uid://dbujavjfviy6o" path="res://player/player.tscn" id="1_p8uki"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_sqv1g"]
+[ext_resource type="PackedScene" uid="uid://b14lhohuh6h8a" path="res://pipes_2/pipes_2.tscn" id="2_gndho"]
+[ext_resource type="PackedScene" uid="uid://cpw30qgynnypa" path="res://world_boundries/world_boundries_2.tscn" id="4_5a0x5"]
+[ext_resource type="Script" path="res://game/follow_cam.gd" id="4_a1175"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_sqv1g")
+pipes_scene = ExtResource("2_gndho")
+
+[node name="Player" parent="." instance=ExtResource("1_p8uki")]
+position = Vector2(240, 376)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 376)
+limit_left = 0
+limit_right = 480
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+script = ExtResource("4_a1175")
+
+[node name="pipesHolder" type="Node" parent="."]
+
+[node name="world_boundries2" parent="." instance=ExtResource("4_5a0x5")]
+
+[node name="SpawnLeft" type="Marker2D" parent="world_boundries2"]
+position = Vector2(100, -80)
+
+[node name="SpawnRight" type="Marker2D" parent="world_boundries2"]
+position = Vector2(380, -80)
