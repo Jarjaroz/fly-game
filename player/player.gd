@@ -29,21 +29,20 @@ func _ready():
 
 func _input(event):
 	if(!GameManager.is_stamina_gone && !GameManager.is_fully_death):
-		if event is InputEventScreenTouch:
-			if event.pressed:
-				var touch_position = event.position.x
-				if touch_position < 240:
-					SignalManager.on_flapping_wing.emit()
-					turn_direction = 1
-					turn_counter = 0
-					play_animation(turn_direction)
-				elif touch_position >= 240:
-					SignalManager.on_flapping_wing.emit()
-					turn_direction = -1
-					turn_counter = 0
-					play_animation(turn_direction)
-				else:
-					play_animation(0)
+		if event is InputEventScreenTouch and event.pressed:
+			var touch_position = event.position.x
+			if touch_position < 240:
+				SignalManager.on_flapping_wing.emit()
+				turn_direction = 1
+				turn_counter = 0
+				play_animation(turn_direction)
+			elif touch_position >= 240:
+				SignalManager.on_flapping_wing.emit()
+				turn_direction = -1
+				turn_counter = 0
+				play_animation(turn_direction)
+			else:
+				play_animation(0)
 		else:
 			if Input.is_action_just_pressed("left") == true:
 				SignalManager.on_flapping_wing.emit()
