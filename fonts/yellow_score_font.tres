@@ -7,5 +7,5 @@ font = ExtResource("1_24f02")
 font_size = 50
 font_color = Color(0, 0.772549, 0.192157, 1)
 outline_size = 10
-outline_color = Color(0.8, 0.764706, 0, 1)
+outline_color = Color(0.933333, 0.564706, 0, 1)
 shadow_size = 0
