@@ -2,7 +2,8 @@ extends Control
 
 @onready var highscore_label = $MarginContainer/VBoxContainer/HighscoreLabel
 @onready var score_label = $MarginContainer/VBoxContainer/ScoreLabel
-@onready var replay_btn = $MarginContainer/VBoxContainer/ReplayBtn
+@onready var replay_button = $MarginContainer/VBoxContainer/ReplayButton
+
 
 
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 func on_game_over():
 	score_label.text = str(GameManager.current_score) + " cm"
 	highscore_label.text = "highscore: %s cm" % GameManager.highscore
-	replay_btn.grab_focus()
+	replay_button.grab_focus()
 
 
 func _on_replay_btn_pressed():
