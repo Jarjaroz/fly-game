@@ -20,6 +20,7 @@ config/icon="res://fly_icon.png"
 GameManager="*res://singletons/game_manager.gd"
 SignalManager="*res://singletons/signal_manager.gd"
 SceneManager="*res://singletons/scene_manager.gd"
+SaveScore="*res://singletons/SaveScore.gd"
 
 [display]
 
