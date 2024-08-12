@@ -68,4 +68,4 @@ right={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.564706, 1, 0.737255, 1)
+environment/defaults/default_clear_color=Color(0.0666667, 0.423529, 0.701961, 1)

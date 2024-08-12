@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c70abl4j0kur5"]
+[gd_scene load_steps=17 format=3 uid="uid://c70abl4j0kur5"]
 
 [ext_resource type="PackedScene" uid="uid://dbujavjfviy6o" path="res://player/player.tscn" id="1_p8uki"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_sqv1g"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b0x4bqlotpsor" path="res://game_ui/game_ui.tscn" id="7_jb3i8"]
 [ext_resource type="PackedScene" uid="uid://cmnjq4uvmsggi" path="res://grass/grass.tscn" id="9_paajh"]
 [ext_resource type="PackedScene" uid="uid://143lb1awng7a" path="res://high_score/high_score.tscn" id="12_ak2x3"]
+[ext_resource type="Texture2D" uid="uid://dj0ygomgj8gkj" path="res://assets/Background_layers/SmallClouds.png" id="15_d4ley"]
+[ext_resource type="Texture2D" uid="uid://dcupfeky5sqlp" path="res://assets/Background_layers/BiggerClouds.png" id="16_cllkb"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_sqv1g")
@@ -60,5 +62,23 @@ size_flags_vertical = 4
 visible = false
 
 [node name="KastanjeTimer" type="Timer" parent="."]
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="Layer1" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(0, 854)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Layer1"]
+position = Vector2(240, 427)
+texture = ExtResource("15_d4ley")
+
+[node name="Layer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0, 0.4)
+motion_mirroring = Vector2(0, 854)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Layer2"]
+position = Vector2(240, 427)
+texture = ExtResource("16_cllkb")
 
 [connection signal="timeout" from="KastanjeTimer" to="." method="_on_kastanje_timer_timeout"]
