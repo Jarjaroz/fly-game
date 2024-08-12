@@ -112,7 +112,7 @@ func play_animation(turn_direction: int) -> void:
 		sprite_animated.play("flap_R")
 	elif turn_direction == 1:
 		sprite_animated.play("flap_L")
-	elif !sprite_animated.is_playing():
+	elif turn_direction == 0:
 		sprite_animated.play("default")
 
 func apply_gravity(delta: float) -> void:
