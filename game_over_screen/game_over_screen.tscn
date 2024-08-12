@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://fhu21gqyjaqs"]
+[gd_scene load_steps=8 format=3 uid="uid://fhu21gqyjaqs"]
 
 [ext_resource type="Script" path="res://game_over_screen/game_over_screen.gd" id="1_huqc0"]
 [ext_resource type="LabelSettings" uid="uid://bj1xyyoju5bho" path="res://fonts/red_score_font.tres" id="1_ibdym"]
 [ext_resource type="FontFile" uid="uid://dmplx3q6t1wca" path="res://fonts/quick_cat/Quick Cat.ttf" id="2_r7ute"]
+[ext_resource type="Texture2D" uid="uid://b6lcp3ikmwebl" path="res://assets/REPLAYBUTTON.png" id="4_ivkqj"]
+[ext_resource type="Texture2D" uid="uid://0i7qfu7frb7m" path="res://assets/MENUBUTTON.png" id="5_t24i5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e40p6"]
 font = ExtResource("2_r7ute")
@@ -76,14 +78,15 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="ReplayBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ReplayButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "AGAIN!"
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_ivkqj")
 
-[node name="menuBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MenuButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "MENU
-"
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_t24i5")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/menuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReplayButton" to="." method="_on_replay_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_btn_pressed"]

@@ -71,9 +71,6 @@ script = ExtResource("1_2burc")
 
 [node name="SpriteAnimated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eg223")
-animation = &"flap_R"
-frame = 2
-frame_progress = 1.0
 offset = Vector2(3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -28,7 +28,6 @@ func _on_screen_exited():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		sprite_2d.modulate = Color.LIGHT_CORAL
 		SignalManager.on_hit_rose.emit()
 		
 		

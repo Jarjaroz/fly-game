@@ -18,8 +18,6 @@ var is_death: bool = false
 @onready var sprite_animated = $SpriteAnimated
 
 
-
-
 func _ready():
 	SignalManager.on_timer_zero.connect(on_timer_zero)
 	SignalManager.on_revive.connect(on_revive)
@@ -114,7 +112,7 @@ func play_animation(turn_direction: int) -> void:
 		sprite_animated.play("flap_R")
 	elif turn_direction == 1:
 		sprite_animated.play("flap_L")
-	elif !sprite_animated.is_playing():
+	elif turn_direction == 0:
 		sprite_animated.play("default")
 
 func apply_gravity(delta: float) -> void:
@@ -134,7 +132,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	time_after_death.start()
 
 func on_hit_rose() -> void:
-	print("rose")
+	print("on_hit_rose")
 	GameManager.is_other_death = true
 	GameManager.is_stamina_gone = true
 	time_after_death.start()
