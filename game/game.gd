@@ -64,6 +64,7 @@ func spawn_pipes() -> void:
 	new_pipes.scale.x = new_pipes.scale.x * flip
 	pipes_holder.add_child(new_pipes)
 	GameManager.increase_pipes_passed()
+
 func stop_pipes() -> void:
 	for pipes in pipes_holder.get_children():
 		pipes.set_process(false)
@@ -82,8 +83,6 @@ func on_game_over():
 	stop_pipes()
 	game_over_ui.show()
 	game_ui.hide()
-
-
 
 func _on_kastanje_timer_timeout():
 	spawn_kastanje()
