@@ -2,7 +2,7 @@
 
 ---
 
-- [ ] Paralex Background (Jasper)
+- [x] Paralex Background
 - [ ] Main menu UI (Jasper)
 - [ ] Highscore save system (Jasper)
 - [ ] Sound effect
