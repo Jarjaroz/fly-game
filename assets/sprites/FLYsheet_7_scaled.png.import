@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://01p2src1ecac"
-path="res://.godot/imported/PLAYBUTTONACTIVE.png-2cc3614a4c7b4a10637d666f3427693b.ctex"
+uid="uid://whp6ig67jsmo"
+path="res://.godot/imported/FLYsheet_7_scaled.png-cfdecbf307330c63e404530948dd7ef1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PLAYBUTTONACTIVE.png"
-dest_files=["res://.godot/imported/PLAYBUTTONACTIVE.png-2cc3614a4c7b4a10637d666f3427693b.ctex"]
+source_file="res://assets/sprites/FLYsheet_7_scaled.png"
+dest_files=["res://.godot/imported/FLYsheet_7_scaled.png-cfdecbf307330c63e404530948dd7ef1.ctex"]
 
 [params]
 

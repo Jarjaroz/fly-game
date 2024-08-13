@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihs22lon03a8"
-path="res://.godot/imported/FLYsheet_scaled.png-0e0a4d1a29cd509ff3f550462aaee3f0.ctex"
+uid="uid://joiwo2k8tkav"
+path="res://.godot/imported/ground.png-2752b5d28f9196b8533751adb848ed24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/FLYsheet_scaled.png"
-dest_files=["res://.godot/imported/FLYsheet_scaled.png-0e0a4d1a29cd509ff3f550462aaee3f0.ctex"]
+source_file="res://assets/sprites/ground.png"
+dest_files=["res://.godot/imported/ground.png-2752b5d28f9196b8533751adb848ed24.ctex"]
 
 [params]
 

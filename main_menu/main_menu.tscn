@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://c70abl4j0kur5" path="res://game/game.tscn" id="2_krcsx"]
 [ext_resource type="Script" path="res://main_menu/PlayButton.gd" id="5_bxaxy"]
 [ext_resource type="LabelSettings" uid="uid://blnlkq5ilh2iq" path="res://fonts/red_grey_record_menu_big.tres" id="5_ehrjr"]
-[ext_resource type="Texture2D" uid="uid://dmvrygdvhst46" path="res://assets/PLAYBUTTON.png" id="7_icj8k"]
-[ext_resource type="Texture2D" uid="uid://01p2src1ecac" path="res://assets/PLAYBUTTONACTIVE.png" id="7_n46ey"]
+[ext_resource type="Texture2D" uid="uid://dmvrygdvhst46" path="res://assets/sprites/PLAYBUTTON.png" id="5_qsroj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3l3ws"]
+load_path = "res://.godot/imported/PLAYBUTTONACTIVE.png-050545f2c978c95fc9182da577fe59b6.ctex"
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -71,9 +73,9 @@ layout_mode = 2
 [node name="PlayButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("7_icj8k")
-texture_pressed = ExtResource("7_icj8k")
-texture_hover = ExtResource("7_n46ey")
+texture_normal = ExtResource("5_qsroj")
+texture_pressed = ExtResource("5_qsroj")
+texture_hover = SubResource("CompressedTexture2D_3l3ws")
 script = ExtResource("5_bxaxy")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

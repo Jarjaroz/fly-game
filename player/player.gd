@@ -66,6 +66,7 @@ func _physics_process(delta):
 	if GameManager.started == false:
 		if turn_direction != 0:
 			GameManager.started = true
+			SignalManager.on_first_flap.emit()
 
 func turn(delta: float) -> void:
 	turn_counter += 1

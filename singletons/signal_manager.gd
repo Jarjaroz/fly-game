@@ -7,3 +7,4 @@ signal on_flapping_wing
 signal on_game_over
 signal on_revive
 signal on_hit_rose
+signal on_first_flap
