@@ -1,21 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://143lb1awng7a"]
 
 [ext_resource type="Script" path="res://high_score/high_score.gd" id="1_lb233"]
-[ext_resource type="Texture2D" uid="uid://cylsxfc0vd6fg" path="res://assets/sprites/highsore_scaled.png" id="2_ljrca"]
+[ext_resource type="Texture2D" uid="uid://cajt6nre4eh4d" path="res://assets/sprites/highscore_NEW.png" id="2_2h8he"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sw6h"]
-size = Vector2(480, 24)
+size = Vector2(480, 33)
 
 [node name="high_score" type="Area2D"]
+top_level = true
 script = ExtResource("1_lb233")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ljrca")
+position = Vector2(-1, -42)
+scale = Vector2(0.251563, 0.1925)
+texture = ExtResource("2_2h8he")
 centered = false
 offset = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(240, 0)
+position = Vector2(239, 21.5)
 shape = SubResource("RectangleShape2D_1sw6h")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
