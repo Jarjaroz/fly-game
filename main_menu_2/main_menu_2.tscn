@@ -7,7 +7,6 @@
 [ext_resource type="LabelSettings" uid="uid://blnlkq5ilh2iq" path="res://fonts/red_grey_record_menu_big.tres" id="4_fri64"]
 [ext_resource type="Texture2D" uid="uid://dmvrygdvhst46" path="res://assets/sprites/PLAYBUTTON.png" id="5_64nfk"]
 [ext_resource type="Texture2D" uid="uid://bmb3gl6o4usjf" path="res://assets/sprites/PLAYBUTTONSELECT.png" id="6_eb0at"]
-[ext_resource type="Script" path="res://main_menu/PlayButton.gd" id="7_208w6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kk27"]
 atlas = ExtResource("3_yxsgf")
@@ -23,6 +22,14 @@ animations = [{
 "name": &"sleep",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_ajm62"]
+script/source = "extends TextureButton
+
+
+func _ready():
+	grab_focus()
+"
 
 [node name="main_menu_2" type="Node2D"]
 script = ExtResource("1_gipf7")
@@ -81,6 +88,6 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("5_64nfk")
 texture_pressed = ExtResource("5_64nfk")
 texture_hover = ExtResource("6_eb0at")
-script = ExtResource("7_208w6")
+script = SubResource("GDScript_ajm62")
 
 [connection signal="pressed" from="main_menu_ui/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
