@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dmvrygdvhst46" path="res://assets/sprites/PLAYBUTTON.png" id="5_qsroj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3l3ws"]
-load_path = "res://.godot/imported/PLAYBUTTONACTIVE.png-050545f2c978c95fc9182da577fe59b6.ctex"
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
