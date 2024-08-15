@@ -6,9 +6,8 @@
 - [ ] Main menu UI (Thor)
 - [x] Highscore save system
 - [ ] Sound effect
-- [x] Character animations (Thor)
+- [ ] Character animations (Thor)
 - [ ] Intro video
-- [ ] Gameover screen
 
 # Misschien
 

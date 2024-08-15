@@ -1,7 +1,7 @@
 extends Node
 
 @export var game_scene: PackedScene = preload("res://game/game.tscn")
-@export var menu_scene: PackedScene = preload("res://main_menu_2/main_menu_2.tscn")
+@export var menu_scene: PackedScene = preload("res://main_menu/main_menu.tscn")
 
 func load_game_scene():
 	GameManager.reset_flight_vars()

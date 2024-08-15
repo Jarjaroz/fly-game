@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://game_over_screen/game_over_screen.gd" id="1_huqc0"]
 [ext_resource type="LabelSettings" uid="uid://bj1xyyoju5bho" path="res://fonts/red_score_font.tres" id="1_ibdym"]
 [ext_resource type="FontFile" uid="uid://dmplx3q6t1wca" path="res://fonts/quick_cat/Quick Cat.ttf" id="2_r7ute"]
-[ext_resource type="Texture2D" uid="uid://b6lcp3ikmwebl" path="res://assets/sprites/REPLAYBUTTON.png" id="4_dgn1n"]
-[ext_resource type="Texture2D" uid="uid://0i7qfu7frb7m" path="res://assets/sprites/MENUBUTTON.png" id="5_tscff"]
+[ext_resource type="Texture2D" uid="uid://b6lcp3ikmwebl" path="res://assets/REPLAYBUTTON.png" id="4_ivkqj"]
+[ext_resource type="Texture2D" uid="uid://0i7qfu7frb7m" path="res://assets/MENUBUTTON.png" id="5_t24i5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e40p6"]
 font = ExtResource("2_r7ute")
@@ -81,12 +81,12 @@ layout_mode = 2
 [node name="ReplayButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("4_dgn1n")
+texture_normal = ExtResource("4_ivkqj")
 
 [node name="MenuButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("5_tscff")
+texture_normal = ExtResource("5_t24i5")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReplayButton" to="." method="_on_replay_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_btn_pressed"]
