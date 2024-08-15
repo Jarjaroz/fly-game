@@ -26,10 +26,12 @@ var types_of_pipes_array: Array = [type_of_pipe.VFLIP_RAND_X,
 
 
 func _ready():
+	kastanje_timer.wait_time = randi_range(7,12)
+	kastanje_timer.start()
 	SignalManager.on_spawn_new_pipe.connect(spawn_pipes)
 	SignalManager.on_game_over.connect(on_game_over)
-	SignalManager.on_first_flap.connect(on_first_flap)
 	SignalManager.on_spawn_new_pipe.emit()
+	
 	game_over_ui.hide()
 
 
@@ -62,14 +64,9 @@ func spawn_pipes() -> void:
 	new_pipes.scale.x = new_pipes.scale.x * flip
 	pipes_holder.add_child(new_pipes)
 	GameManager.increase_pipes_passed()
-
 func stop_pipes() -> void:
 	for pipes in pipes_holder.get_children():
 		pipes.set_process(false)
-
-func on_first_flap() -> void:
-	kastanje_timer.wait_time = randi_range(7,12)
-	kastanje_timer.start()
 
 func spawn_kastanje() -> void:
 	var x_pos: int
@@ -85,6 +82,8 @@ func on_game_over():
 	stop_pipes()
 	game_over_ui.show()
 	game_ui.hide()
+
+
 
 func _on_kastanje_timer_timeout():
 	spawn_kastanje()
