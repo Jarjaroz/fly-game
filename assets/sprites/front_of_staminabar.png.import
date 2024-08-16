@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajt6nre4eh4d"
-path="res://.godot/imported/highscore_NEW.png-2eb8c6d2ce4c9d50a0820517a222ea7d.ctex"
+uid="uid://bd55agkqlyp23"
+path="res://.godot/imported/front_of_staminabar.png-1c561170a388e31cf8b39da746edd726.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/highscore_NEW.png"
-dest_files=["res://.godot/imported/highscore_NEW.png-2eb8c6d2ce4c9d50a0820517a222ea7d.ctex"]
+source_file="res://assets/sprites/front_of_staminabar.png"
+dest_files=["res://.godot/imported/front_of_staminabar.png-1c561170a388e31cf8b39da746edd726.ctex"]
 
 [params]
 

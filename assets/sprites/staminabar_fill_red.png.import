@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clyu5ftu5u16o"
-path="res://.godot/imported/highsore_NEW.png-1c5af85b8db44705d9c27f4534e06f85.ctex"
+uid="uid://cu2u28p4q245y"
+path="res://.godot/imported/staminabar_fill_red.png-b398d2c50b6d0bc19fd7b9299d209208.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/highsore_NEW.png"
-dest_files=["res://.godot/imported/highsore_NEW.png-1c5af85b8db44705d9c27f4534e06f85.ctex"]
+source_file="res://assets/sprites/staminabar_fill_red.png"
+dest_files=["res://.godot/imported/staminabar_fill_red.png-b398d2c50b6d0bc19fd7b9299d209208.ctex"]
 
 [params]
 

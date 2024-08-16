@@ -1,17 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b0x4bqlotpsor"]
 
 [ext_resource type="Script" path="res://game_ui/game_ui.gd" id="1_yllsg"]
-[ext_resource type="StyleBox" uid="uid://cmvrp6gf7ebyj" path="res://game_ui/sb_background_trans.tres" id="2_n78dh"]
+[ext_resource type="Texture2D" uid="uid://cwubtnp3kinpd" path="res://assets/sprites/back_of_staminabar.png" id="2_6gd3m"]
 [ext_resource type="LabelSettings" uid="uid://ddp81l7kp0jyh" path="res://fonts/yellow_score_font.tres" id="3_1cf0c"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mws08"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ash2k"]
-bg_color = Color(0.545098, 0.478431, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[ext_resource type="Texture2D" uid="uid://bd55agkqlyp23" path="res://assets/sprites/front_of_staminabar.png" id="3_vf54q"]
+[ext_resource type="Texture2D" uid="uid://dhhx7a6qh3ad2" path="res://assets/sprites/staminabar_fill.png" id="4_8mf66"]
 
 [node name="gameUI" type="Control"]
 layout_mode = 3
@@ -33,44 +26,38 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 30
 
-[node name="HealthBar" type="ProgressBar" parent="MarginContainer"]
-z_index = 1
-custom_minimum_size = Vector2(0, 50)
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_mws08")
-max_value = 1.0
-value = 1.0
-rounded = true
-show_percentage = false
+size_flags_horizontal = 4
+value = 50.0
+texture_under = ExtResource("2_6gd3m")
+texture_over = ExtResource("3_vf54q")
+texture_progress = ExtResource("4_8mf66")
 
-[node name="LossBar" type="ProgressBar" parent="MarginContainer/HealthBar"]
-z_index = -1
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HealthBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = ExtResource("2_n78dh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ash2k")
-show_percentage = false
 
-[node name="LossTimer" type="Timer" parent="MarginContainer/HealthBar"]
-wait_time = 0.35
-one_shot = true
+[node name="spacer" type="Control" parent="MarginContainer/HealthBar/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
 
-[node name="heightLabel" type="Label" parent="MarginContainer"]
+[node name="heightLabel" type="Label" parent="MarginContainer/HealthBar/VBoxContainer"]
 z_index = 3
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
 text = "156 cm
 "
 label_settings = ExtResource("3_1cf0c")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
-[connection signal="timeout" from="MarginContainer/HealthBar/LossTimer" to="." method="_on_loss_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
