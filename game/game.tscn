@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c70abl4j0kur5"]
+[gd_scene load_steps=18 format=3 uid="uid://c70abl4j0kur5"]
 
 [ext_resource type="PackedScene" uid="uid://dbujavjfviy6o" path="res://player/player.tscn" id="1_p8uki"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_sqv1g"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://143lb1awng7a" path="res://high_score/high_score.tscn" id="12_ak2x3"]
 [ext_resource type="Texture2D" uid="uid://dj0ygomgj8gkj" path="res://assets/Background_layers/SmallClouds.png" id="15_d4ley"]
 [ext_resource type="Texture2D" uid="uid://dcupfeky5sqlp" path="res://assets/Background_layers/BiggerClouds.png" id="16_cllkb"]
+[ext_resource type="PackedScene" uid="uid://bydcy2ig5y1l5" path="res://lamp/lamp.tscn" id="17_5w6gm"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_sqv1g")
@@ -80,5 +81,13 @@ motion_mirroring = Vector2(0, 854)
 [node name="Sprite2D" type="Sprite2D" parent="Background/Layer2"]
 position = Vector2(240, 427)
 texture = ExtResource("16_cllkb")
+
+[node name="lamp1" parent="." instance=ExtResource("17_5w6gm")]
+position = Vector2(91, 783)
+scale = Vector2(0.3, 0.3)
+
+[node name="lamp2" parent="." instance=ExtResource("17_5w6gm")]
+position = Vector2(393, 787)
+scale = Vector2(0.3, 0.3)
 
 [connection signal="timeout" from="KastanjeTimer" to="." method="_on_kastanje_timer_timeout"]
