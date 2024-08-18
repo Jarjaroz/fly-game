@@ -4,8 +4,8 @@ extends Control
 @onready var height_label = $MarginContainer/HealthBar/VBoxContainer/heightLabel
 @onready var health_bar = $MarginContainer/HealthBar
 
-const STAMINABAR_FILL_YEL = preload("res://assets/sprites/staminabar_fill.png")
-const STAMINABAR_FILL_RED = preload("res://assets/sprites/staminabar_fill_red.png")
+const STAMINABAR_FILL_YEL = preload("res://assets/sprites/staminabar_fill2.png")
+const STAMINABAR_FILL_RED = preload("res://assets/sprites/staminabar_fill_red2.png")
 
 const STAMINA_FLAPPING_COST: int = 3
 const MAX_STAMINA: int = 500
