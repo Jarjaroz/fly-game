@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://vkvewuo17ts1"]
+[gd_scene load_steps=5 format=3 uid="uid://vkvewuo17ts1"]
 
 [ext_resource type="Script" path="res://flower/flower.gd" id="1_7dp78"]
 [ext_resource type="Texture2D" uid="uid://dt2jtjpm7cvfg" path="res://assets/sprites/flower_scaled.png" id="2_4bv37"]
+[ext_resource type="Texture2D" uid="uid://dikasvp7hpwwn" path="res://flower/light_gradient.tres" id="2_8hr1p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lakok"]
 radius = 44.0454
 
 [node name="flower" type="Area2D"]
+visibility_layer = 2
 collision_layer = 8
 script = ExtResource("1_7dp78")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(7.62891, 7.62891)
+color = Color(1, 1, 0, 1)
+texture = ExtResource("2_8hr1p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4bv37")

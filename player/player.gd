@@ -25,6 +25,7 @@ func _ready():
 	GameManager.is_fully_death = false
 	set_process_input(true)
 
+
 func _input(event):
 	if(!GameManager.is_stamina_gone && !GameManager.is_fully_death):
 		if event is InputEventScreenTouch and event.pressed:
@@ -54,6 +55,8 @@ func _input(event):
 				play_animation(turn_direction)
 			else:
 				play_animation(0)
+	else:
+		play_animation(3)
 
 func _physics_process(delta):
 	if(!GameManager.is_stamina_gone && !GameManager.is_fully_death):
@@ -108,12 +111,18 @@ func recenter() -> void:
 				rotation_degrees += RECENTER_POWER
 
 func play_animation(turn_direction: int) -> void:
+	if GameManager.started == false:
+		sprite_animated.play("blink")
 	if turn_direction == -1:
 		sprite_animated.play("flap_R")
 	elif turn_direction == 1:
 		sprite_animated.play("flap_L")
 	elif turn_direction == 0:
 		sprite_animated.play("default")
+	elif turn_direction == 3:
+		sprite_animated.play("death")
+	elif turn_direction == 4:
+		sprite_animated.play("blink")
 
 func apply_gravity(delta: float) -> void:
 	if velocity.y < 500:
@@ -136,9 +145,11 @@ func on_hit_rose() -> void:
 	GameManager.is_other_death = true
 	GameManager.is_stamina_gone = true
 	time_after_death.start()
+	play_animation(3)
 
 func on_revive() -> void:
 	print("revive")
+	play_animation(4)
 	GameManager.is_stamina_gone = false
 
 func _on_time_after_death_timeout() -> void:

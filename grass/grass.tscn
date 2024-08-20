@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmnjq4uvmsggi"]
 
-[ext_resource type="Texture2D" uid="uid://w1hp27g66iq2" path="res://assets/sprites/fly grass.png" id="1_qbhr6"]
+[ext_resource type="Texture2D" uid="uid://k3tuvwu3u2fa" path="res://assets/sprites/ground.png" id="1_mnbgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlkg7"]
-size = Vector2(483, 23)
+size = Vector2(483, 29)
 
 [node name="Grass" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qbhr6")
+texture = ExtResource("1_mnbgi")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(239.5, 108.5)
+position = Vector2(239.5, 41.5)
 shape = SubResource("RectangleShape2D_nlkg7")
