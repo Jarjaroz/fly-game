@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bydcy2ig5y1l5"]
+[gd_scene load_steps=5 format=3 uid="uid://bydcy2ig5y1l5"]
 
 [ext_resource type="Texture2D" uid="uid://rcti8oqeh2jr" path="res://assets/sprites/lamp.png" id="1_bk2bl"]
-[ext_resource type="Texture2D" uid="uid://dikasvp7hpwwn" path="res://flower/light_gradient.tres" id="2_65b8u"]
+
+[sub_resource type="Gradient" id="Gradient_r54uj"]
+offsets = PackedFloat32Array(0, 0.694805)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8myk8"]
+gradient = SubResource("Gradient_r54uj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcw0c"]
 size = Vector2(176, 232)
@@ -16,7 +24,7 @@ position = Vector2(-1, 94)
 scale = Vector2(14.2145, 14.2145)
 color = Color(1, 0.941176, 0, 1)
 shadow_enabled = true
-texture = ExtResource("2_65b8u")
+texture = SubResource("GradientTexture2D_8myk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 19)
