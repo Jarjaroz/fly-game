@@ -8,6 +8,7 @@ var is_fully_death: bool = false
 var is_stamina_gone: bool = false
 var is_other_death: bool = false
 var started: bool = false
+var menu_start: bool = true 
 
 var current_score: int = 0
 var highscore: int = 0

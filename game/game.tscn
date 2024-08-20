@@ -30,7 +30,7 @@ position = Vector2(0, 730)
 position = Vector2(240, 659)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(162, 426)
+position = Vector2(162, 726)
 limit_left = 0
 limit_right = 480
 position_smoothing_enabled = true
@@ -49,14 +49,14 @@ position = Vector2(100, -130)
 [node name="SpawnRight" type="Marker2D" parent="world_boundries2"]
 position = Vector2(380, -130)
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="GameCanvas" type="CanvasLayer" parent="."]
 
-[node name="game_over" parent="Canvas" instance=ExtResource("7_4bkn1")]
+[node name="game_over" parent="GameCanvas" instance=ExtResource("7_4bkn1")]
 visible = false
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="gameUI" parent="Canvas" instance=ExtResource("7_jb3i8")]
+[node name="gameUI" parent="GameCanvas" instance=ExtResource("7_jb3i8")]
 
 [node name="high_score" parent="." instance=ExtResource("12_ak2x3")]
 visible = false

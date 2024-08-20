@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var game_ui = $Canvas/gameUI
+@onready var game_ui = $GameCanvas/gameUI
 @onready var player = $Player
 @onready var pipes_holder = $pipesHolder
 @onready var spawn_left = $world_boundries2/SpawnLeft
 @onready var spawn_right = $world_boundries2/SpawnRight
-@onready var game_over_ui = $Canvas/game_over
+@onready var game_over_ui = $GameCanvas/game_over
 @onready var kastanje_holder = $kastanjeHolder
 @onready var kastanje_timer = $KastanjeTimer
 
@@ -26,14 +26,19 @@ var types_of_pipes_array: Array = [type_of_pipe.VFLIP_RAND_X,
 
 
 func _ready():
-	kastanje_timer.wait_time = randi_range(7,12)
-	kastanje_timer.start()
+	SignalManager.on_first_flap.connect(on_first_flap)
 	SignalManager.on_spawn_new_pipe.connect(spawn_pipes)
 	SignalManager.on_game_over.connect(on_game_over)
 	SignalManager.on_spawn_new_pipe.emit()
-	
 	game_over_ui.hide()
+	if GameManager.menu_start:
+		game_ui.hide()
+	else:
+		game_ui.show()
 
+func on_first_flap() -> void:
+	kastanje_timer.wait_time = randi_range(7,12)
+	kastanje_timer.start()
 
 func spawn_pipes() -> void:
 	

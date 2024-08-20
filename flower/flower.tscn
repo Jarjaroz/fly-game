@@ -13,8 +13,7 @@ collision_layer = 8
 script = ExtResource("1_7dp78")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(7.62891, 7.62891)
+scale = Vector2(5.76758, 5.76758)
 color = Color(1, 1, 0, 1)
 texture = ExtResource("2_8hr1p")
 

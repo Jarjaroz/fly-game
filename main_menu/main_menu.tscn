@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcksrpruvo8mc"]
+[gd_scene load_steps=7 format=3 uid="uid://dcksrpruvo8mc"]
 
-[ext_resource type="Texture2D" uid="uid://djql30beftmp1" path="res://assets/sprites/FLYsprite.png" id="1_df3k6"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_ryxtc"]
 [ext_resource type="PackedScene" uid="uid://c70abl4j0kur5" path="res://game/game.tscn" id="2_krcsx"]
 [ext_resource type="Script" path="res://main_menu/PlayButton.gd" id="5_bxaxy"]
@@ -17,24 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ryxtc")
 game_scene = ExtResource("2_krcsx")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.490196, 0.866667, 0.635294, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 25.0
-offset_top = 35.0
-offset_right = 457.0
-offset_bottom = 467.0
-texture = ExtResource("1_df3k6")
-expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
