@@ -11,6 +11,7 @@ var lerp_speed: float  # Speed at which the camera moves
 func _ready():
 	SignalManager.on_game_over.connect(on_game_over)
 
+
 func _physics_process(delta):
 	if !GameManager.is_stamina_gone && !GameManager.menu_start:
 		distance = (player.position.y - 150) - position.y

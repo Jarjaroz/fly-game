@@ -27,6 +27,8 @@ func _ready():
 
 
 func _input(event):
+	if GameManager.menu_start:
+		return
 	if(!GameManager.is_stamina_gone && !GameManager.is_fully_death):
 		if event is InputEventScreenTouch and event.pressed:
 			var touch_position = event.position.x

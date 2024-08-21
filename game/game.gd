@@ -1,11 +1,13 @@
 extends Node2D
 
+@onready var main_menu = $GameCanvas/main_menu
 @onready var game_ui = $GameCanvas/gameUI
+@onready var game_over_ui = $GameCanvas/game_over
+
 @onready var player = $Player
 @onready var pipes_holder = $pipesHolder
 @onready var spawn_left = $world_boundries2/SpawnLeft
 @onready var spawn_right = $world_boundries2/SpawnRight
-@onready var game_over_ui = $GameCanvas/game_over
 @onready var kastanje_holder = $kastanjeHolder
 @onready var kastanje_timer = $KastanjeTimer
 
@@ -29,12 +31,16 @@ func _ready():
 	SignalManager.on_first_flap.connect(on_first_flap)
 	SignalManager.on_spawn_new_pipe.connect(spawn_pipes)
 	SignalManager.on_game_over.connect(on_game_over)
+	SignalManager.on_game_start.connect(on_game_start)
 	SignalManager.on_spawn_new_pipe.emit()
 	game_over_ui.hide()
-	if GameManager.menu_start:
-		game_ui.hide()
-	else:
+	if !GameManager.menu_start:
 		game_ui.show()
+		main_menu.hide()
+
+func on_game_start() -> void:
+	game_ui.show()
+	main_menu.hide()
 
 func on_first_flap() -> void:
 	kastanje_timer.wait_time = randi_range(7,12)

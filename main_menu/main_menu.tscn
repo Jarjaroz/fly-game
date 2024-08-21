@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcksrpruvo8mc"]
+[gd_scene load_steps=6 format=3 uid="uid://dcksrpruvo8mc"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_ryxtc"]
-[ext_resource type="PackedScene" uid="uid://c70abl4j0kur5" path="res://game/game.tscn" id="2_krcsx"]
 [ext_resource type="Script" path="res://main_menu/PlayButton.gd" id="5_bxaxy"]
 [ext_resource type="LabelSettings" uid="uid://blnlkq5ilh2iq" path="res://fonts/red_grey_record_menu_big.tres" id="5_ehrjr"]
 [ext_resource type="Texture2D" uid="uid://dmvrygdvhst46" path="res://assets/PLAYBUTTON.png" id="7_icj8k"]
@@ -15,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ryxtc")
-game_scene = ExtResource("2_krcsx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -36,7 +34,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(200, 400)
 layout_mode = 2
 
 [node name="Highscore" type="Label" parent="MarginContainer/VBoxContainer"]

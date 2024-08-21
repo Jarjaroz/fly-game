@@ -3,9 +3,9 @@
 ---
 
 - [x] Paralex Background
-- [ ] Main menu UI (Thor)
+- [x] Main menu UI (Thor)
 - [x] Highscore save system
-- [ ] Sound effect
+- [ ] Sound effect(Thor)
 - [x] Character animations (Thor)
 - [ ] Intro video
 

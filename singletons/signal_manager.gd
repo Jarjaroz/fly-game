@@ -8,3 +8,4 @@ signal on_game_over
 signal on_revive
 signal on_hit_rose
 signal on_first_flap
+signal on_game_start
