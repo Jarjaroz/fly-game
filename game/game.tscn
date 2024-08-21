@@ -51,10 +51,8 @@ position = Vector2(380, -130)
 
 [node name="GameCanvas" type="CanvasLayer" parent="."]
 
-[node name="game_over" parent="GameCanvas" instance=ExtResource("7_4bkn1")]
+[node name="game_over_screen" parent="GameCanvas" instance=ExtResource("7_4bkn1")]
 visible = false
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="gameUI" parent="GameCanvas" instance=ExtResource("7_jb3i8")]
 
