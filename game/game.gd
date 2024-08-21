@@ -5,7 +5,7 @@ extends Node2D
 @onready var pipes_holder = $pipesHolder
 @onready var spawn_left = $world_boundries2/SpawnLeft
 @onready var spawn_right = $world_boundries2/SpawnRight
-@onready var game_over_ui = $GameCanvas/game_over
+@onready var game_over_ui = $GameCanvas/game_over_screen
 @onready var kastanje_holder = $kastanjeHolder
 @onready var kastanje_timer = $KastanjeTimer
 
