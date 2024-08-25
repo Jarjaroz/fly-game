@@ -1,13 +1,20 @@
 extends Area2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var teller: int = 0
+
 func _ready():
-	if GameManager.highscore > 1:
+	SignalManager.on_reset_highscore.connect(on_reset_highscore)
+	SignalManager.on_game_start.connect(on_game_start)
+	position.y = (GameManager.highscore*-1)*100 +500
+	show()
+
+func on_game_start():
+	if GameManager.highscore > 0:
 		position.y = (GameManager.highscore*-1)*100 +500
-		print(GameManager.highscore)
-		print((GameManager.highscore*-1 )*100 +500) 
-		print(position.y)
 		show()
+
+func on_reset_highscore():
+	position.y = (GameManager.highscore*-1)*100 +500
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

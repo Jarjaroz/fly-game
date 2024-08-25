@@ -8,19 +8,20 @@
 radius = 44.0454
 
 [node name="flower" type="Area2D"]
+light_mask = 2
 visibility_layer = 2
 collision_layer = 8
 script = ExtResource("1_7dp78")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(5.76758, 5.76758)
-color = Color(1, 1, 0, 1)
-texture = ExtResource("2_8hr1p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4bv37")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lakok")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(5.76758, 5.76758)
+color = Color(1, 1, 0, 1)
+texture = ExtResource("2_8hr1p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

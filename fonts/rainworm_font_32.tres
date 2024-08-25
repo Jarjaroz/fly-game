@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cc20gaeumdd5t"]
+
+[ext_resource type="FontFile" uid="uid://dmplx3q6t1wca" path="res://fonts/quick_cat/Quick Cat.ttf" id="1_bucfo"]
+
+[resource]
+font = ExtResource("1_bucfo")
+font_size = 32
+font_color = Color(0.827451, 0.360784, 0.654902, 1)
+outline_size = 10
+outline_color = Color(0.733333, 0.0235294, 0.329412, 1)

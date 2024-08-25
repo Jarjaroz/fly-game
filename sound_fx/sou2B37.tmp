@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://do6rpritu5w4"]
+
+[ext_resource type="Script" path="res://sound_fx/sound_manager.gd" id="1_cfoi2"]
+[ext_resource type="AudioStream" uid="uid://g5yts1o8425m" path="res://sounds/xyloButton.wav" id="1_u4mcj"]
+[ext_resource type="AudioStream" uid="uid://djswcq6gvr28e" path="res://sounds/678921__bloodpixelhero__game-soundtrack.wav" id="3_c21jr"]
+[ext_resource type="AudioStream" uid="uid://4e012yqhgyea" path="res://sounds/xyloButton2.wav" id="4_sds0x"]
+[ext_resource type="AudioStream" uid="uid://b38qrfjl67pwo" path="res://sounds/368771__kfatehi__argg-pitfall.wav" id="5_nwu0h"]
+[ext_resource type="AudioStream" uid="uid://dg1escum5e10a" path="res://sounds/game_over.wav" id="6_x15gg"]
+
+[node name="SoundFx" type="Node"]
+script = ExtResource("1_cfoi2")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c21jr")
+autoplay = true
+bus = &"Music"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_u4mcj")
+volume_db = 1.0
+bus = &"SFX"
+
+[node name="ButtonClick2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sds0x")
+bus = &"SFX"
+
+[node name="Argg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nwu0h")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x15gg")
+bus = &"SFX"

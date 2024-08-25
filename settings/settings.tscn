@@ -1,0 +1,239 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt65gs4tf2vm3"]
+
+[ext_resource type="Script" path="res://settings/settings_menu.gd" id="1_j70s8"]
+[ext_resource type="Texture2D" uid="uid://csasaar08aju7" path="res://assets/sprites/square.png" id="1_mc7nr"]
+[ext_resource type="LabelSettings" uid="uid://cc20gaeumdd5t" path="res://fonts/rainworm_font_32.tres" id="2_bhm00"]
+[ext_resource type="Texture2D" uid="uid://e6nap3ii0f8m" path="res://assets/sprites/CLOSEBUTTON.png" id="3_gmrb1"]
+[ext_resource type="LabelSettings" uid="uid://bv36tfegyqvta" path="res://fonts/small_black_font.tres" id="4_6y63n"]
+[ext_resource type="Texture2D" uid="uid://cqf46fvhifjcr" path="res://assets/sprites/highscore_updated.png" id="6_n3yb5"]
+[ext_resource type="FontFile" uid="uid://cyp24w7ukc37" path="res://fonts/quick_cat/Quick Cat.otf" id="7_026hw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsrif"]
+font = ExtResource("7_026hw")
+font_size = 24
+font_color = Color(0.733333, 0.145098, 0.207843, 1)
+outline_size = 2
+outline_color = Color(0.733333, 0.145098, 0.207843, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j70s8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 130
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 250
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_mc7nr")
+region_rect = Rect2(0, 0, 100, 100)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings
+"
+label_settings = ExtResource("2_bhm00")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer2" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music volume
+"
+label_settings = ExtResource("4_6y63n")
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+value = 100.0
+rounded = true
+scrollable = false
+
+[node name="spacer3" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="SoundLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "sound volume
+"
+label_settings = ExtResource("4_6y63n")
+horizontal_alignment = 1
+
+[node name="SoundSlider" type="HSlider" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+value = 100.0
+rounded = true
+scrollable = false
+
+[node name="spacer4" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RESET HIGHSCORE"
+
+[node name="spacer" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_gmrb1")
+
+[node name="CloseLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "close"
+label_settings = ExtResource("4_6y63n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YouSure" type="NinePatchRect" parent="MarginContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_mc7nr")
+region_rect = Rect2(0, 0, 100, 100)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/YouSure"]
+layout_mode = 2
+offset_left = -40.0
+offset_top = -11.0
+offset_right = 440.0
+offset_bottom = 89.0
+texture = ExtResource("6_n3yb5")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/YouSure"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/YouSure/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="ResetLabel" type="Label" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "reset highscore?
+"
+label_settings = ExtResource("4_6y63n")
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="YesButton" type="TextureButton" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_gmrb1")
+
+[node name="CloseLabel" type="Label" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer/YesButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hell yeah"
+label_settings = SubResource("LabelSettings_bsrif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoButton" type="TextureButton" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_gmrb1")
+
+[node name="CloseLabel" type="Label" parent="MarginContainer/YouSure/MarginContainer/VBoxContainer/NoButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "not yet"
+label_settings = ExtResource("4_6y63n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="changed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_changed"]
+[connection signal="drag_ended" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_slider_drag_started"]
+[connection signal="changed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/SoundSlider" to="." method="_on_sound_slider_changed"]
+[connection signal="drag_ended" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/SoundSlider" to="." method="_on_sound_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/SoundSlider" to="." method="_on_slider_drag_started"]
+[connection signal="pressed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="MarginContainer/YouSure/MarginContainer/VBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="MarginContainer/YouSure/MarginContainer/VBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

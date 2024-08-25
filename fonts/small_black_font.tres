@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bv36tfegyqvta"]
+
+[ext_resource type="FontFile" uid="uid://cyp24w7ukc37" path="res://fonts/quick_cat/Quick Cat.otf" id="1_bmw3x"]
+
+[resource]
+font = ExtResource("1_bmw3x")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)

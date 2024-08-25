@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://7qbwaqmmp36e"]
+
+[ext_resource type="Texture2D" uid="uid://d3to8x5t7ht2r" path="res://assets/sprites/theRoyalGuy.png" id="1_f5ka0"]
+[ext_resource type="Script" path="res://start_up_screen/FatKingGuy.gd" id="2_1ttir"]
+
+[sub_resource type="Animation" id="Animation_4rpgb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8tf5s"]
+resource_name = "fade in"
+length = 1.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1.93187),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwev3"]
+_data = {
+"RESET": SubResource("Animation_4rpgb"),
+"fade in": SubResource("Animation_8tf5s")
+}
+
+[node name="StartUpScreen" type="Node2D"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(480, 900)
+offset_right = 480.0
+offset_bottom = 900.0
+
+[node name="FatKingGuy" type="CharacterBody2D" parent="."]
+script = ExtResource("2_1ttir")
+
+[node name="Sprite2D" type="Sprite2D" parent="FatKingGuy"]
+texture = ExtResource("1_f5ka0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(480, 900)
+offset_right = 480.0
+offset_bottom = 900.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gwev3")
+}
+autoplay = "fade in"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="FatKingGuy" method="_on_animation_finished"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=18 format=3 uid="uid://c70abl4j0kur5"]
+
+[ext_resource type="PackedScene" uid="uid://dbujavjfviy6o" path="res://player/player.tscn" id="1_p8uki"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_sqv1g"]
+[ext_resource type="PackedScene" uid="uid://b14lhohuh6h8a" path="res://pipes_2/pipes_2.tscn" id="2_gndho"]
+[ext_resource type="PackedScene" uid="uid://cpw30qgynnypa" path="res://world_boundries/world_boundries_2.tscn" id="4_5a0x5"]
+[ext_resource type="PackedScene" uid="uid://bikrcacctqhng" path="res://pipes_4/pipes_4.tscn" id="4_73624"]
+[ext_resource type="Script" path="res://game/follow_cam.gd" id="4_a1175"]
+[ext_resource type="PackedScene" uid="uid://cdebfgfwvtmp6" path="res://pipes_5/pipes_5.tscn" id="5_jmh24"]
+[ext_resource type="PackedScene" uid="uid://dpr04xmhy1va0" path="res://pipes_6/pipes_6.tscn" id="6_c44gb"]
+[ext_resource type="PackedScene" uid="uid://dq1eu5cqj1vuu" path="res://kastanje/kastanje.tscn" id="6_jhsb3"]
+[ext_resource type="PackedScene" uid="uid://b2kragsn2p1w3" path="res://leaves_falling/leaves_falling.tscn" id="7_2ny8w"]
+[ext_resource type="PackedScene" uid="uid://fhu21gqyjaqs" path="res://game_over_screen/game_over_screen.tscn" id="7_4bkn1"]
+[ext_resource type="PackedScene" uid="uid://b0x4bqlotpsor" path="res://game_ui/game_ui.tscn" id="7_jb3i8"]
+[ext_resource type="PackedScene" uid="uid://cmnjq4uvmsggi" path="res://grass/grass.tscn" id="9_paajh"]
+[ext_resource type="PackedScene" uid="uid://143lb1awng7a" path="res://high_score/high_score.tscn" id="12_ak2x3"]
+[ext_resource type="PackedScene" uid="uid://dcksrpruvo8mc" path="res://main_menu/main_menu.tscn" id="14_wejfv"]
+[ext_resource type="Texture2D" uid="uid://dj0ygomgj8gkj" path="res://assets/Background_layers/SmallClouds.png" id="15_d4ley"]
+[ext_resource type="Texture2D" uid="uid://dcupfeky5sqlp" path="res://assets/Background_layers/BiggerClouds.png" id="16_cllkb"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_sqv1g")
+pipes = Array[PackedScene]([ExtResource("2_gndho"), ExtResource("2_gndho"), ExtResource("4_73624"), ExtResource("5_jmh24"), ExtResource("6_c44gb")])
+kastanje = ExtResource("6_jhsb3")
+leaves = ExtResource("7_2ny8w")
+
+[node name="Grass" parent="." instance=ExtResource("9_paajh")]
+position = Vector2(0, 730)
+
+[node name="Player" parent="." instance=ExtResource("1_p8uki")]
+position = Vector2(240, 659)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(162, 726)
+limit_left = 0
+limit_right = 480
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+script = ExtResource("4_a1175")
+
+[node name="pipesHolder" type="Node" parent="."]
+
+[node name="kastanjeHolder" type="Node" parent="."]
+
+[node name="world_boundries2" parent="." instance=ExtResource("4_5a0x5")]
+
+[node name="SpawnLeft" type="Marker2D" parent="world_boundries2"]
+position = Vector2(100, -130)
+
+[node name="SpawnRight" type="Marker2D" parent="world_boundries2"]
+position = Vector2(380, -130)
+
+[node name="GameCanvas" type="CanvasLayer" parent="."]
+
+[node name="game_over" parent="GameCanvas" instance=ExtResource("7_4bkn1")]
+visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="gameUI" parent="GameCanvas" instance=ExtResource("7_jb3i8")]
+visible = false
+
+[node name="main_menu" parent="GameCanvas" instance=ExtResource("14_wejfv")]
+
+[node name="high_score" parent="." instance=ExtResource("12_ak2x3")]
+visible = false
+
+[node name="KastanjeTimer" type="Timer" parent="."]
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="Layer1" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(0, 854)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Layer1"]
+position = Vector2(240, 427)
+texture = ExtResource("15_d4ley")
+
+[node name="Layer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0, 0.4)
+motion_mirroring = Vector2(0, 854)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Layer2"]
+position = Vector2(240, 427)
+texture = ExtResource("16_cllkb")
+
+[connection signal="timeout" from="KastanjeTimer" to="." method="_on_kastanje_timer_timeout"]

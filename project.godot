@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FLY"
-run/main_scene="res://game/game.tscn"
+run/main_scene="res://start_up_screen/start_up_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://fly_icon.png"
 
@@ -21,6 +21,7 @@ GameManager="*res://singletons/game_manager.gd"
 SignalManager="*res://singletons/signal_manager.gd"
 SceneManager="*res://singletons/scene_manager.gd"
 SaveScore="*res://singletons/SaveScore.gd"
+SoundFx="*res://sound_fx/sound_fx.tscn"
 
 [display]
 

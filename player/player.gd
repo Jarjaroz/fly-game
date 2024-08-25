@@ -159,5 +159,6 @@ func _on_time_after_death_timeout() -> void:
 	time_after_death.stop()
 	if GameManager.is_stamina_gone or GameManager.is_other_death:
 		print("dead")
-		SignalManager.on_game_over.emit()
-		GameManager.is_fully_death = true
+		if !GameManager.is_fully_death:
+			SignalManager.on_game_over.emit()
+			GameManager.is_fully_death = true

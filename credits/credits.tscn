@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcwx6befjs4un"]
+
+[ext_resource type="Script" path="res://credits/credits.gd" id="1_hh8r2"]
+[ext_resource type="Texture2D" uid="uid://csasaar08aju7" path="res://assets/sprites/square.png" id="1_mgymb"]
+[ext_resource type="LabelSettings" uid="uid://cc20gaeumdd5t" path="res://fonts/rainworm_font_32.tres" id="2_76dbo"]
+[ext_resource type="Texture2D" uid="uid://e6nap3ii0f8m" path="res://assets/sprites/CLOSEBUTTON.png" id="3_akb51"]
+[ext_resource type="LabelSettings" uid="uid://bv36tfegyqvta" path="res://fonts/small_black_font.tres" id="4_henoi"]
+[ext_resource type="FontFile" uid="uid://cyp24w7ukc37" path="res://fonts/quick_cat/Quick Cat.otf" id="4_ljpgp"]
+[ext_resource type="Texture2D" uid="uid://d3to8x5t7ht2r" path="res://assets/sprites/theRoyalGuy.png" id="5_c2l5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4q3uc"]
+font = ExtResource("4_ljpgp")
+font_size = 24
+font_color = Color(0.709804, 0.2, 0, 1)
+outline_size = 2
+outline_color = Color(0.709804, 0.2, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eeyi4"]
+font = ExtResource("4_ljpgp")
+font_size = 24
+font_color = Color(0.141176, 0.627451, 0.239216, 1)
+outline_size = 2
+outline_color = Color(0.141176, 0.627451, 0.239216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8lyiy"]
+font = ExtResource("4_ljpgp")
+font_size = 24
+font_color = Color(0.121569, 0.431373, 1, 1)
+outline_size = 2
+outline_color = Color(0.121569, 0.431373, 1, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hh8r2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 130
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 250
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_mgymb")
+region_rect = Rect2(0, 0, 100, 100)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Credits
+"
+label_settings = ExtResource("2_76dbo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer2" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MADE BY"
+label_settings = ExtResource("4_henoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name1" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jarjaroz"
+label_settings = SubResource("LabelSettings_4q3uc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_c2l5n")
+
+[node name="Label2" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "WITH THE HELP OF"
+label_settings = ExtResource("4_henoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name2" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Cyberpenguin"
+label_settings = SubResource("LabelSettings_eeyi4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer6" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MUSIC FROM"
+label_settings = ExtResource("4_henoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name3" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bloodpixelhero"
+label_settings = SubResource("LabelSettings_8lyiy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer7" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_akb51")
+
+[node name="CloseLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "close"
+label_settings = ExtResource("4_henoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -9,3 +9,4 @@ signal on_revive
 signal on_hit_rose
 signal on_first_flap
 signal on_game_start
+signal on_reset_highscore
