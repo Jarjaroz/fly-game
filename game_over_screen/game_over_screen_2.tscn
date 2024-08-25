@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://gu0jpar2vuxn"]
+
+[ext_resource type="Script" path="res://game_over_screen/game_over_screen_2.gd" id="1_wat78"]
+[ext_resource type="FontFile" uid="uid://dmplx3q6t1wca" path="res://fonts/quick_cat/Quick Cat.ttf" id="2_mgqfc"]
+[ext_resource type="Texture2D" uid="uid://b6lcp3ikmwebl" path="res://assets/REPLAYBUTTON.png" id="3_evvc6"]
+[ext_resource type="Texture2D" uid="uid://0i7qfu7frb7m" path="res://assets/MENUBUTTON.png" id="4_l6ush"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4kle"]
+font = ExtResource("2_mgqfc")
+font_size = 64
+font_color = Color(0.266667, 0.560784, 0.984314, 1)
+outline_size = 10
+outline_color = Color(0.203922, 0.188235, 0.717647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_72fjn"]
+font = ExtResource("2_mgqfc")
+font_size = 48
+font_color = Color(0.266667, 0.560784, 0.984314, 1)
+outline_size = 10
+outline_color = Color(0.215686, 0.164706, 0.709804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vv6gm"]
+font = ExtResource("2_mgqfc")
+font_size = 32
+font_color = Color(0.827451, 0.360784, 0.654902, 1)
+outline_size = 10
+outline_color = Color(0.733333, 0.0235294, 0.329412, 1)
+
+[node name="GameOverScreen2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wat78")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.513726, 0.94902, 0.317647)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 854.0
+
+[node name="Spacing" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="GameOverLbl" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER
+"
+label_settings = SubResource("LabelSettings_q4kle")
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "354 cm
+"
+label_settings = SubResource("LabelSettings_72fjn")
+horizontal_alignment = 1
+
+[node name="Spacing2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Spacing3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+
+[node name="HighscoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "RECORD: 354 cm
+"
+label_settings = SubResource("LabelSettings_vv6gm")
+horizontal_alignment = 1
+
+[node name="ReplayButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 480.0
+offset_right = 239.0
+offset_bottom = 580.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_evvc6")
+
+[node name="MenuButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 243.0
+offset_top = 480.0
+offset_right = 423.0
+offset_bottom = 580.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_l6ush")
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

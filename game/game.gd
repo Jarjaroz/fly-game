@@ -28,6 +28,7 @@ var types_of_pipes_array: Array = [type_of_pipe.VFLIP_RAND_X,
 
 
 func _ready():
+	
 	SignalManager.on_first_flap.connect(on_first_flap)
 	SignalManager.on_spawn_new_pipe.connect(spawn_pipes)
 	SignalManager.on_game_over.connect(on_game_over)
@@ -93,6 +94,7 @@ func on_game_over():
 	stop_pipes()
 	game_over_ui.show()
 	game_ui.hide()
+	SoundFx.play_sound(3)
 
 
 
