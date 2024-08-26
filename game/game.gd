@@ -15,8 +15,8 @@ extends Node2D
 enum type_of_pipe {STATIC, VFLIP, VFLIP_RAND_X}
 
 @export var pipes: Array[PackedScene]
-@export var kastanje: PackedScene
-@export var leaves: PackedScene
+var kastanje: PackedScene = preload("res://kastanje/kastanje.tscn")
+var leaves: PackedScene = preload("res://leaves_falling/leaves_falling.tscn")
 var types_of_pipes_array: Array = [type_of_pipe.VFLIP_RAND_X,
 									type_of_pipe.VFLIP,
 									type_of_pipe.VFLIP,
@@ -28,7 +28,6 @@ var types_of_pipes_array: Array = [type_of_pipe.VFLIP_RAND_X,
 
 
 func _ready():
-	
 	SignalManager.on_first_flap.connect(on_first_flap)
 	SignalManager.on_spawn_new_pipe.connect(spawn_pipes)
 	SignalManager.on_game_over.connect(on_game_over)
@@ -41,14 +40,13 @@ func _ready():
 
 func on_game_start() -> void:
 	game_ui.show()
-	main_menu.hide()
+	main_menu.queue_free()
 
 func on_first_flap() -> void:
 	kastanje_timer.wait_time = randi_range(7,12)
 	kastanje_timer.start()
 
 func spawn_pipes() -> void:
-	
 	var x_pos = 240
 	var new_pipes
 	var flip: int = 1

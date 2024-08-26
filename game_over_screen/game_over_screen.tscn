@@ -39,6 +39,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0705882, 0.407843, 0.784314, 0.235294)
 
+[node name="GameOverLbl" type="Label" parent="."]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 130.0
+offset_right = 450.0
+offset_bottom = 197.0
+text = "GAME OVER
+"
+label_settings = ExtResource("2_w1jg3")
+horizontal_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -54,15 +65,8 @@ theme_override_constants/margin_right = 30
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="GameOverLbl" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "GAME OVER
-"
-label_settings = ExtResource("2_w1jg3")
-horizontal_alignment = 1
-
 [node name="Spacer3" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]

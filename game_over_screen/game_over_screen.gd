@@ -5,7 +5,9 @@ extends Control
 @onready var replay_button = $MarginContainer/VBoxContainer/ReplayButton
 const PINK_SCORE_FONT = preload("res://fonts/pink_score_font.tres")
 const RED_SCORE_FONT = preload("res://fonts/red_score_font.tres")
-@onready var game_over_lbl = $MarginContainer/VBoxContainer/GameOverLbl
+@onready var game_over_lbl = $GameOverLbl
+
+
 
 var gameoverlbl_normal: bool = true
 @onready var spacer_3 = $MarginContainer/VBoxContainer/Spacer3
@@ -33,9 +35,9 @@ func _on_menu_btn_pressed():
 func _on_game_over_flash_timeout():
 	gameoverlbl_normal = !gameoverlbl_normal
 	if gameoverlbl_normal:
-		spacer_3.custom_minimum_size.y = 40
+	
 		game_over_lbl.label_settings = RED_SCORE_FONT
 	else:
-		spacer_3.custom_minimum_size.y = 38
+
 		game_over_lbl.label_settings = PINK_SCORE_FONT
 	

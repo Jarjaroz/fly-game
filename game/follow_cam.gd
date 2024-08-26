@@ -12,7 +12,7 @@ func _ready():
 	SignalManager.on_game_over.connect(on_game_over)
 
 
-func _physics_process(delta):
+func _process(delta):
 	if !GameManager.is_stamina_gone && !GameManager.menu_start:
 		distance = (player.position.y - 150) - position.y
 		
@@ -21,8 +21,6 @@ func _physics_process(delta):
 		lerp_speed = distance * -2
 		if(distance<0):
 			position.y = lerp(position.y, target_position_y, lerp_speed * delta)
-		
-		# Update the GameManager with the new camera position
 		GameManager.set_camera_position(position)	
 
 func on_game_over():

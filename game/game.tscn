@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c70abl4j0kur5"]
+[gd_scene load_steps=16 format=3 uid="uid://c70abl4j0kur5"]
 
 [ext_resource type="PackedScene" uid="uid://dbujavjfviy6o" path="res://player/player.tscn" id="1_p8uki"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_sqv1g"]
@@ -8,8 +8,6 @@
 [ext_resource type="Script" path="res://game/follow_cam.gd" id="4_a1175"]
 [ext_resource type="PackedScene" uid="uid://cdebfgfwvtmp6" path="res://pipes_5/pipes_5.tscn" id="5_jmh24"]
 [ext_resource type="PackedScene" uid="uid://dpr04xmhy1va0" path="res://pipes_6/pipes_6.tscn" id="6_c44gb"]
-[ext_resource type="PackedScene" uid="uid://dq1eu5cqj1vuu" path="res://kastanje/kastanje.tscn" id="6_jhsb3"]
-[ext_resource type="PackedScene" uid="uid://b2kragsn2p1w3" path="res://leaves_falling/leaves_falling.tscn" id="7_2ny8w"]
 [ext_resource type="PackedScene" uid="uid://fhu21gqyjaqs" path="res://game_over_screen/game_over_screen.tscn" id="7_4bkn1"]
 [ext_resource type="PackedScene" uid="uid://b0x4bqlotpsor" path="res://game_ui/game_ui.tscn" id="7_jb3i8"]
 [ext_resource type="PackedScene" uid="uid://cmnjq4uvmsggi" path="res://grass/grass.tscn" id="9_paajh"]
@@ -21,8 +19,6 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_sqv1g")
 pipes = Array[PackedScene]([ExtResource("2_gndho"), ExtResource("2_gndho"), ExtResource("4_73624"), ExtResource("5_jmh24"), ExtResource("6_c44gb")])
-kastanje = ExtResource("6_jhsb3")
-leaves = ExtResource("7_2ny8w")
 
 [node name="Grass" parent="." instance=ExtResource("9_paajh")]
 position = Vector2(0, 730)
