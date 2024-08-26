@@ -77,10 +77,10 @@ func increase_pipes_passed() -> void:
 		pipe_rest = pipes_passed
 		if pipe_before_flower<4:
 			pipe_before_flower +=1
-		elif pipe_before_flower<9:
+		elif pipe_before_flower<8:
 			if (pipes_passed-pipe_rest)%(pipe_before_flower*2) == 0:
 				pipe_before_flower +=1
-		elif pipe_before_flower<18:
+		elif pipe_before_flower<13:
 			if (pipes_passed-pipe_rest)%(pipe_before_flower*3) == 0:
 				pipe_before_flower +=1
 		else:

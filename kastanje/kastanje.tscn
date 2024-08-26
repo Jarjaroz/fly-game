@@ -82,7 +82,7 @@ shape = SubResource("CapsuleShape2D_vwu46")
 [node name="LeavesFalling" parent="." instance=ExtResource("4_2j61d")]
 
 [node name="timeBeforeFall" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
