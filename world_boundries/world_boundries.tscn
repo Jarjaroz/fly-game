@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1owe5t0abvfy"]
-
-[ext_resource type="Script" path="res://world_boundries/world_boundries.gd" id="1_ax7k7"]
+[gd_scene load_steps=2 format=3 uid="uid://d1owe5t0abvfy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5yitc"]
 
 [node name="WorldBoundries" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_ax7k7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

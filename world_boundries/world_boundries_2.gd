@@ -11,9 +11,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	position.y = GameManager.get_var_player_position().y -50
-	spawn_left.position.y = position.y -460
-	spawn_right.position.y = position.y -460
+	spawn_left.position.y = GameManager.get_var_player_position().y -510
+	spawn_right.position.y = GameManager.get_var_player_position().y -510
 	
 	

@@ -21,8 +21,11 @@ func play_sound(sound_num: int):
 func set_music_volume(volume: float):
 	AudioServer.set_bus_volume_db(1, linear_to_db(volume/100))
 
-
-
 func set_sound_volume(volume: float):
 	AudioServer.set_bus_volume_db(2, linear_to_db(volume/100))
 
+func get_music_volume():
+	return db_to_linear(AudioServer.get_bus_volume_db(1))*100
+
+func get_sound_volume():
+	return db_to_linear(AudioServer.get_bus_volume_db(2))*100

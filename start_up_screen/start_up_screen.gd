@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var king_end_timer = $kingEndTimer
-@onready var name = $name
 
 
 # Called when the node enters the scene tree for the first time.

@@ -17,7 +17,6 @@ func _process(_delta):
 		
 		SignalManager.on_spawn_new_pipe.emit()
 		spawned_new_pipe = true
-	move_and_slide()
 
 func _on_screen_exited():
 	var player_pos:Vector2 = GameManager.get_var_player_position()

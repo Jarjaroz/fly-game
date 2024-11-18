@@ -6,3 +6,4 @@ func _on_body_entered(body):
 			SignalManager.on_revive.emit()
 		SignalManager.on_flower_hit.emit()
 		queue_free()
+

@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://7qbwaqmmp36e"]
+[gd_scene load_steps=6 format=3 uid="uid://7qbwaqmmp36e"]
 
-[ext_resource type="Texture2D" uid="uid://d3to8x5t7ht2r" path="res://assets/sprites/theRoyalGuy.png" id="1_f5ka0"]
 [ext_resource type="Script" path="res://start_up_screen/FatKingGuy.gd" id="2_1ttir"]
 [ext_resource type="LabelSettings" uid="uid://bv36tfegyqvta" path="res://fonts/small_black_font.tres" id="3_s53xt"]
 
@@ -53,7 +52,6 @@ offset_bottom = 900.0
 script = ExtResource("2_1ttir")
 
 [node name="Sprite2D" type="Sprite2D" parent="FatKingGuy"]
-texture = ExtResource("1_f5ka0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(480, 900)

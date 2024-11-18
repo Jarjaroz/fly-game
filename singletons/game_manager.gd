@@ -7,6 +7,7 @@ var camera_position: Vector2
 var is_fully_death: bool = false
 var is_stamina_gone: bool = false
 var is_other_death: bool = false
+var is_death_by_screen: bool = false
 var started: bool = false
 var menu_start: bool = true 
 
@@ -25,6 +26,7 @@ var flowerNeeded: bool = false
 func _ready():
 	SignalManager.on_flower_hit.connect(flower_hit)
 	pipe_before_flower  = 2
+	pipe_rest = 0
 	
 func set_var_player_position(veckie: Vector2) -> void:
 	player_position = veckie
@@ -64,7 +66,7 @@ func calculate_kastanje_time() -> int:
 
 func calculate_space_between_pipes() -> int:
 	var return_value: int
-	return_value = space_between_pipes - pipes_passed*5
+	return_value = space_between_pipes - pipes_passed*3
 	if return_value < -60:
 		return_value = -60
 	return return_value 
@@ -72,20 +74,27 @@ func calculate_space_between_pipes() -> int:
 func increase_pipes_passed() -> void:
 	pipes_passed+= 1
 	if (pipes_passed-pipe_rest)%pipe_before_flower == 0:
-		print("flower")
+		print("flower %s" % flowers_hit)
 		flowerNeeded = true
 		pipe_rest = pipes_passed
-		if pipe_before_flower<4:
+		if flowers_hit < 3:
 			pipe_before_flower +=1
-		elif pipe_before_flower<8:
-			if (pipes_passed-pipe_rest)%(pipe_before_flower*2) == 0:
-				pipe_before_flower +=1
-		elif pipe_before_flower<13:
-			if (pipes_passed-pipe_rest)%(pipe_before_flower*3) == 0:
-				pipe_before_flower +=1
+		elif flowers_hit < 6:
+			pipe_before_flower = 6
+		elif flowers_hit < 9:
+			pipe_before_flower = 7
+		elif flowers_hit < 15:
+			pipe_before_flower = 8
+		elif flowers_hit < 20:
+			pipe_before_flower = 9
+		elif flowers_hit < 23:
+			pipe_before_flower = 10
+		elif flowers_hit < 25:
+			pipe_before_flower = 11
+		elif flowers_hit < 27:
+			pipe_before_flower = 13
 		else:
-			if (pipes_passed-pipe_rest)%(pipe_before_flower*5) == 0:
-				pipe_before_flower +=1
+			pipe_before_flower = 15
 	else:
 		print("twig")
 	

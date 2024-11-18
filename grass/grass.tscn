@@ -16,3 +16,6 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(239.5, 41.5)
 shape = SubResource("RectangleShape2D_nlkg7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(239, 1)

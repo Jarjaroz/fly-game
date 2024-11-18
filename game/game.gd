@@ -36,7 +36,7 @@ func _ready():
 	game_over_ui.hide()
 	if !GameManager.menu_start:
 		game_ui.show()
-		main_menu.hide()
+		main_menu.queue_free()
 
 func on_game_start() -> void:
 	game_ui.show()
@@ -70,7 +70,7 @@ func spawn_pipes() -> void:
 			flip = 1
 		else:
 			flip = -1
-	new_pipes.position = Vector2(x_pos, spawn_left.position.y)
+	new_pipes.position = Vector2(x_pos, (GameManager.get_var_player_position().y -510))
 	new_pipes.scale.x = new_pipes.scale.x * flip
 	pipes_holder.add_child(new_pipes)
 	GameManager.increase_pipes_passed()
@@ -83,18 +83,17 @@ func spawn_kastanje() -> void:
 	var new_kastanje
 	new_kastanje = kastanje.instantiate()
 	x_pos = randf_range(spawn_left.position.x, spawn_right.position.x)
-	new_kastanje.position = Vector2(x_pos, spawn_left.position.y)
+	new_kastanje.position = Vector2(x_pos, (GameManager.get_var_player_position().y -510))
 	kastanje_holder.add_child(new_kastanje)
 	kastanje_timer.wait_time = GameManager.calculate_kastanje_time()
 	kastanje_timer.start()
 
 func on_game_over():
+	print("dead connected")
 	stop_pipes()
 	game_over_ui.show()
 	game_ui.hide()
 	SoundFx.play_sound(3)
-
-
 
 func _on_kastanje_timer_timeout():
 	spawn_kastanje()

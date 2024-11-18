@@ -16,6 +16,7 @@ var is_death: bool = false
 
 @onready var time_after_death = $TimeAfterDeath
 @onready var sprite_animated = $SpriteAnimated
+@onready var visible_notifier = $VisibleOnScreenNotifier2D
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	SignalManager.on_hit_rose.connect(on_hit_rose)
 	GameManager.is_fully_death = false
 	set_process_input(true)
+	
 
 
 func _input(event):
@@ -49,12 +51,13 @@ func _input(event):
 				SignalManager.on_flapping_wing.emit()
 				turn_direction = 1
 				turn_counter = 0
-				play_animation(turn_direction)
+
 			elif Input.is_action_just_pressed("right") == true:
 				SignalManager.on_flapping_wing.emit()
 				turn_direction = -1
 				turn_counter = 0
 				play_animation(turn_direction)
+
 			else:
 				play_animation(0)
 	else:
@@ -139,9 +142,7 @@ func on_timer_zero() -> void:
 	print("stamina gone")
 	time_after_death.start()
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	GameManager.is_other_death = true
-	time_after_death.start()
+
 
 func on_hit_rose() -> void:
 	print("on_hit_rose")
@@ -155,10 +156,20 @@ func on_revive() -> void:
 	play_animation(4)
 	GameManager.is_stamina_gone = false
 
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	GameManager.is_death_by_screen = true
+	time_after_death.start()
+
 func _on_time_after_death_timeout() -> void:
 	time_after_death.stop()
-	if GameManager.is_stamina_gone or GameManager.is_other_death:
-		print("dead")
+	print("misa on screen?")
+	print(visible_notifier.is_on_screen())
+	if visible_notifier.is_on_screen() && GameManager.is_death_by_screen:
+		GameManager.is_death_by_screen = false
+		play_animation(4)
+		return
+	if GameManager.is_stamina_gone or GameManager.is_other_death or GameManager.is_death_by_screen:
 		if !GameManager.is_fully_death:
+			print("dead")
 			SignalManager.on_game_over.emit()
 			GameManager.is_fully_death = true

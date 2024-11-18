@@ -18,7 +18,7 @@ func _ready():
 func on_game_over():
 	score_label.text = str(GameManager.current_score) + " cm"
 	highscore_label.text = "highscore: %s cm" % GameManager.highscore
-	SaveScore.save_score()
+	SaveScore.save_data()
 	replay_button.grab_focus()
 
 

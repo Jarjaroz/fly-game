@@ -3,6 +3,8 @@ extends Area2D
 @onready var gpu_particles_2d = $GPUParticles2D
 @onready var sprite_2d = $Sprite2D
 @onready var time_before_fall = $timeBeforeFall
+@onready var off_screen_timer = $offScreenTimer
+@onready var screen_notifier = $VisibleOnScreenNotifier2D
 
 const  SPEED := 1500
 
@@ -29,3 +31,12 @@ func _on_time_before_fall_timeout():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		SignalManager.on_hit_rose.emit()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	off_screen_timer.start()
+
+
+func _on_off_screen_timer_timeout():
+	if !screen_notifier.is_on_screen():
+		queue_free()

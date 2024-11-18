@@ -11,6 +11,11 @@ func _on_close_button_pressed():
 	SoundFx.play_sound(1)
 	self.hide()
 
+func _ready():
+	music_slider.value = SoundFx.get_music_volume()
+	sound_slider.value = SoundFx.get_sound_volume()
+	
+
 func _process(delta):
 	if !sliders_activated:
 		return
@@ -23,11 +28,13 @@ func _on_slider_drag_started():
 
 func _on_slider_drag_ended(_value_changed):
 	sliders_activated = false
+	SaveScore.save_data()
 
 
 func _on_sound_slider_drag_ended(_value_changed):
 	sliders_activated = false
 	SoundFx.play_sound(0)
+	SaveScore.save_data()
 
 func _on_reset_button_pressed():
 	you_sure.show()
